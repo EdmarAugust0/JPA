@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TB_MATRICULA")
 public class Matricula {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matri_seq")
 	@SequenceGenerator(name = "matri_seq", sequenceName = "SQ_MATRICULA", initialValue = 1, allocationSize = 1)
@@ -24,8 +25,8 @@ public class Matricula {
 	@Column(name = "DATA_MATRICULA", nullable = false)
 	private Instant dataMatricula;
 	
-	@Column(name = "VALOR", nullable = false)
-	private Instant valor;
+	@Column(name = "valor", nullable = false)
+	private Double valor;
 	
 	@Column(name = "STATUS", nullable = false)
 	private String status;
@@ -54,11 +55,11 @@ public class Matricula {
 		this.dataMatricula = dataMatricula;
 	}
 
-	public Instant getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(Instant valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 
